@@ -458,46 +458,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
   <a href="https://github.com/kuanglonghui"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"
       alt="Fork me on GitHub"></a>
- <div id="one">
-
-    </div>
-    <div id="two">
-
-    </div>
-    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=8a9f5605ad0cf7180977d11e612a8a07"></script>
-    <script id="baiduJs" charset="utf-8" src="https://api.map.baidu.com/api?v=2.0&ak=BORW59HeNs0amhebvmy1qvrwySYgcWDI"></script>
-    <script>
-        var geolocation = new BMap.Geolocation();
-
-        geolocation.getCurrentPosition(function(r) {
-            if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-                // toast.showToast("百度地图 " + JSON.stringify(r), 2000000);
-                document.getElementById("one").innerHTML = "百度地图 " + JSON.stringify(r);
-                console.log(r);
-
-            } else {}
-        });
-
-        function showCityInfo() {
-            //加载城市查询插件
-            AMap.service(["AMap.CitySearch"], function() {
-                //实例化城市查询类
-                var citysearch = new AMap.CitySearch();
-                //自动获取用户IP，返回当前城市
-                citysearch.getLocalCity(function(status, result) {
-                    if (status === 'complete' && result.info === 'OK') {
-                        if (result && result.city && result.bounds) {
-                            var cityinfo = result.city;
-                            var citybounds = result.bounds;
-                            document.getElementById("two").innerHTML = "高德地图 " + JSON.stringify(result);
-                        }
-                    } else {
-                        //toast("您当前所在城市：" + result.info + "");
-                    }
-                });
-            });
-        }
-        showCityInfo();
-    </script>
+ 
 </body>
 </html>
